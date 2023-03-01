@@ -83,29 +83,33 @@
                 </tbody>
             </table>
             <Pagination
-                :data="posts"
-                @pagination-change-page="getPosts"
                 class="my-5"
+                :data="posts"
+                @pagination-change-page="page => getPosts(page, selectedCategory)"
             ></Pagination>
         </div>
     </div>
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import usePosts from "../../composables/posts";
 import useCategories from "../../composables/categories";
 
 export default {
     setup() {
-        const selectedCategory = ref('');
+        const selectedCategory = ref("");
         const { posts, getPosts } = usePosts();
         const { categories, getCategories } = useCategories();
         onMounted(() => {
             getPosts(), getCategories();
         });
 
-        return { posts, getPosts, categories, getCategories };
+        watch(selectedCategory, (currrent, previous) => {
+            getPosts(1, currrent);
+        });
+
+        return { posts, getPosts, categories, selectedCategory };
     },
 };
 </script>
