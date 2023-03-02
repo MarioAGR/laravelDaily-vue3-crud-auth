@@ -17,6 +17,7 @@ class PostResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'category_id' => $this->category->id,
             'category' => $this->category->name,
             'content' => str($this->content)->limit(50),
             'created_at' => $this->created_at->toDateString(),
