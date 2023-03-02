@@ -12,7 +12,11 @@ export default function usePost() {
 
     const getPosts = async (
         page = 1,
-        category = '',
+        search_category = '',
+        search_id = '',
+        search_title = '',
+        search_content = '',
+        search_global = '',
         order_column = 'created_at',
         order_direction = 'desc'
     ) => {
@@ -20,7 +24,11 @@ export default function usePost() {
             .get(
                 '/api/posts' +
                 `?page=${page}` +
-                `&category=${category}` +
+                `&search_category=${search_category}` +
+                `&search_id=${search_id}` +
+                `&search_title=${search_title}` +
+                `&search_content=${search_content}` +
+                `&search_global=${search_global}` +
                 `&order_column=${order_column}` +
                 `&order_direction=${order_direction}`
             )
