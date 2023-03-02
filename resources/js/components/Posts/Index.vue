@@ -142,6 +142,7 @@
                             <router-link :to="{ name: 'posts.edit', params: { id: post.id } }">
                                 Edit
                             </router-link>
+                            <a href="#" @click.prevent="deletePost(post.id)" class="">Delete</a>
                         </td>
                     </tr>
                 </tbody>
@@ -163,7 +164,7 @@ export default {
         const selectedCategory = ref("");
         const orderColumn = ref("created_at");
         const orderDirection = ref("desc");
-        const { posts, getPosts } = usePosts();
+        const { posts, getPosts, deletePost } = usePosts();
         const { categories, getCategories } = useCategories();
         onMounted(() => {
             getPosts(), getCategories();
@@ -182,6 +183,7 @@ export default {
         return {
             posts,
             getPosts,
+            deletePost,
             categories,
             selectedCategory,
             orderColumn,
