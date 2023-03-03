@@ -113,7 +113,7 @@ export default function usePost() {
             confirmButtonColor: '#ef4444',
             timer: 4000,
             timerProgressBar: true,
-            reverseButtton: true,
+            reverseButtons: true,
         }).then(result => {
             if (result.isConfirmed) {
                 axios
