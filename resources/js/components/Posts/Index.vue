@@ -8,17 +8,17 @@
             <table class="min-w-full divide-y divide-gray-200 border">
                 <thead>
                     <tr>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <input v-model="search_id" type="text"
                                 class="inline-block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 placeholder="Filter by ID">
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <input v-model="search_title" type="text"
                                 class="inline-block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 placeholder="Filter by Title">
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <select v-model="search_category"
                                 class="inline-block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                 <option value="" selected>-- all categories --</option>
@@ -27,16 +27,16 @@
                                 </option>
                             </select>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <input v-model="search_content" type="text"
                                 class="inline-block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 placeholder="Filter by Content">
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left"></th>
-                        <th class="px-6 py-3 bg-gray-50 text-left"></th>
+                        <th class="px-4 py-2 bg-gray-50 text-left"></th>
+                        <th class="px-4 py-2 bg-gray-50 text-left"></th>
                     </tr>
                     <tr>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <div class="flex flex-row items-center justify-between cursor-pointer"
                                 @click="updateOrdering('id')">
                                 <div class="leading-4 font-medium text-gray-500 uppercase tracking-wider" :class="{
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <div class="flex flex-row items-center justify-between cursor-pointer"
                                 @click="updateOrdering('title')">
                                 <div class="leading-4 font-medium text-gray-500 uppercase tracking-wider" :class="{
@@ -98,17 +98,17 @@
                                 </div>
                             </div>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Category
                             </span>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 Content
                             </span>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             <div class="flex flex-row items-center justify-between cursor-pointer"
                                 @click="updateOrdering('created_at')">
                                 <div class="leading-4 font-medium text-gray-500 uppercase tracking-wider" :class="{
@@ -139,7 +139,7 @@
                                 </div>
                             </div>
                         </th>
-                        <th class="px-6 py-3 bg-gray-50 text-left">
+                        <th class="px-4 py-2 bg-gray-50 text-left">
                             Actions
                         </th>
                     </tr>
