@@ -19,5 +19,8 @@ class RoleSeeder extends Seeder
 
         $editor = Role::create(['name' => 'Editor']);
         $editor->permissions()->attach(Permission::whereNot('name', 'posts.delete')->pluck('id'));
+
+        $postDeleter = Role::create(['name' => 'Post Deleter']);
+        $postDeleter->permissions()->attach(Permission::where('name', 'posts.delete')->pluck('id'));
     }
 }

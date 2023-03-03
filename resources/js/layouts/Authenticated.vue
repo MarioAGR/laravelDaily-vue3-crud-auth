@@ -22,7 +22,8 @@
                                 class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
                                 Posts
                             </router-link>
-                            <router-link :to="{ name: 'posts.create' }" active-class="border-b-2 border-indigo-400"
+                            <router-link v-if="can('posts.create')" :to="{ name: 'posts.create' }"
+                                active-class="border-b-2 border-indigo-400"
                                 class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
                                 Create Post
                             </router-link>
@@ -69,12 +70,14 @@
 
 <script>
 import useAuth from '../composables/auth';
+import { useAbility } from "@casl/vue";
 
 export default {
     setup() {
         const { user, processing, logout } = useAuth();
+        const { can } = useAbility();
 
-        return { user, processing, logout };
+        return { user, processing, logout, can };
     },
     computed: {
         currentPageTitle() {

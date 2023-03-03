@@ -19,5 +19,8 @@ class UserSeeder extends Seeder
 
         $editor = User::factory()->create();
         $editor->roles()->attach(Role::where('name', 'Editor')->value('id'));
+
+        $postDeleter = User::factory()->create();
+        $postDeleter->roles()->attach(Role::where('name', 'Post Deleter')->value('id'));
     }
 }

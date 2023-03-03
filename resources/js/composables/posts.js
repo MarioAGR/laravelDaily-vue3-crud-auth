@@ -73,6 +73,12 @@ export default function usePost() {
             .catch(error => {
                 if (error.response?.data) {
                     validationErrors.value = error.response.data.errors;
+                    if (error.response.data?.message) {
+                        swal({
+                            icon: 'error',
+                            title: error.response.data.message
+                        });
+                    }
                 }
             })
             .finally(() => isLoading.value = false);
